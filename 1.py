@@ -1,1 +1,2 @@
-pritn("eeee")
+print("eeee")
+print('2g')
