@@ -172,10 +172,8 @@ space_objects = [planetura_ono_rabotaet, superstarstar, planet_i_eta_toge]
 print(superstarstar.move_space_object(5))
 print(planetura_ono_rabotaet.move_space_object(4))
 print(planet_i_eta_toge.calculate_force(space_objects))
-print()
 recalculate_space_objects_positions(space_objects, 7)
 
 if __name__ == "__main__":
     print("This module is not for direct call!")
     #запушся плиз
-print('1')
