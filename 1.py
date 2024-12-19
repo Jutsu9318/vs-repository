@@ -6,6 +6,11 @@ bot_token = '7554379497:AAH2ZwuRWSwYqkdDDAPiiOqlDgo9HOLPwq0'
 bot = Bot(token = bot_token)
 dp = Dispatcher()
 
+#update_chek
+@dp.message()
+async def get_update(message: Message):
+    await message.reply(text = f'{message.model_dump_json(indent=4, exclude_none=True)}')
+
 async def process_start_command(message: Message):
     await message.answer('hi')
 
@@ -19,13 +24,14 @@ async def sticers(message: Message):
     await message.reply_sticker(message.sticker.file_id)
 
 async def process_echo_command(message: Message):
-    await message.reply(text = message.text)
+    if message.text == 'hi':
+        await message.reply(text = message.text)
 
 
 
 dp.message.register(process_start_command, Command(commands='start'))
 dp.message.register(process_help_command, Command(commands='help'))
-dp.message.register(send_photo, F.photo)
+dp.message.register(send_photo, F.photo,)
 dp.message.register(sticers, F.sticker)
 dp.message.register(process_echo_command)
 
