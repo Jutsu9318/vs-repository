@@ -1,3 +1,5 @@
+##HII##
+
 def bipartite(graph):
     n = len(graph.keys())
     colors = [-1] * n
@@ -43,7 +45,6 @@ def kuhn(graph):
             max_matching += 1
     return match, max_matching
 
-
 def minpocr(graph):
     a, parts = bipartite(graph)
     if not a:
@@ -78,7 +79,6 @@ def minpocr(graph):
     for v in R:
         if v_R[v]:
             c.append(v)
-
     return b + c
 G = {
     0: [1, 3],
